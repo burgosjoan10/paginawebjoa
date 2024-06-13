@@ -1,0 +1,485 @@
+body {
+    background-color: #000;
+    background-image: url(fondo\ \(2\).png);
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    overflow-x: hidden;
+    --border-color: #555;
+    --border-hover: rgb(7, 28, 87);
+    --border-skills: rgb(2, 2, 117);
+    --border-pag: rgb(78, 139, 183, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio {
+    border: 1px solid #000;
+}
+
+/*-------------------------HEADER SECTION-----------------------------*/
+
+.header {
+    display: flex;
+    justify-content: end;
+    border-radius: 10px;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: end;
+    margin-top: 40px;
+    margin-right: 60px;
+}
+
+.nav__list {
+    display: inline-flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.nav__list a {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 6px;
+    color: #fff9;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+}
+
+.nav__items {
+    padding: 8px 4px;
+    color: #fff9;
+    border: 2px solid var(--border-color);
+    border-radius: 7px;
+    transition: border-color .6s;
+}
+
+
+.nav__items:hover {
+    border: 1px solid var(--border-pag);
+    background-color: #000;
+}
+
+.nav__list .cv {
+    border: 2px solid var(--border-pag);
+    transition: background-color .6s ;
+}
+
+.cv:hover {
+    background-color: var(--border-pag);
+}
+
+/*----------------------------MEDIA HEADER SECTION------------------------------*/
+
+    @media screen and (max-width:800px){
+        .nav__items {
+            padding: 0px;
+            margin: 3px;
+        }
+
+        .nav__list {
+            font-size: 10px;
+            padding: 0;
+        }
+
+        .header {
+            display: none;
+            justify-content: center;
+        }
+
+        .cv {
+            display: none;
+        }
+
+
+    }
+    
+
+/*----------------------------END HEADER SECTION------------------------------*/
+
+/*-----------------------------ABOUT ME SECTION-------------------------------*/
+
+h1 {
+    font-family: georgia;
+    font-size: 80px;
+    margin-top: 130px;
+    margin-left: 133px;
+}
+
+.container-logos {
+    display: flex;
+    justify-content: start;
+    margin-left: 133px;
+    list-style: none;
+    padding: 10px;
+}
+
+.logos {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding-right: 30px;
+}
+
+.subtitulo-am {
+    display: inline-flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 800;
+    margin-left: 133px;
+}
+
+.avatar {
+    width: 60px;
+    margin-left: 15px;
+    border-radius: 50%;
+}
+
+.descrip-am {
+    max-width: 800px;
+    margin-top: 7px;
+    margin-bottom: 18px;
+    font-weight: 300;
+    margin-left: 133px;
+    font-size: 14px;
+}
+
+strong {
+    color: var(--border-pag);
+}
+
+/*-----------------------------MEDIA ABOUT ME SECTION------------------------------*/
+
+@media screen and (max-width:800px) {
+    
+    h1 {
+        margin-left: 30px;
+        padding: 10px;
+    }
+
+    .container-logos {
+        margin-left: 40px;
+        padding: 10px;
+    }
+
+    .subtitulo-am {
+        margin-left: 20px;
+        padding: 10px;
+    }
+    
+    .descrip-am {
+        margin-left: 20px;
+        padding: 0px 10px;
+    }
+}
+
+/*----------------------------END ABOUT ME SECTION------------------------------*/
+
+/*-----------------------------TECNOLOGIAS SECTION------------------------------*/
+
+.titulos-skills {
+    display: flex;
+    font-family: georgia;
+    justify-content: start;
+    border-bottom: 2px solid rgba(78, 139, 183, 0.6);
+    padding: 5px;
+    border-radius: 10px 0 10px 0;
+    width: 80%;
+    margin-left: 130px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+.container__skills {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    border-radius: 10px;
+    min-width: fit-content;
+    background-color: transparent;
+    position: relative;
+    margin-left: 200px;
+    margin-bottom: 80px;
+    gap: 80px;
+}
+
+.skill-img {
+    width: 65px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.skill-img2 {
+    width: 70px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.skill-img3 {
+    width: 67px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.skill-img4 {
+    width: 75px;
+    height: 68px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.skill-img5 {
+    width: 74px;
+    height: 80px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.container__skills {
+    max-width: clamp(160px, 50%, 320px);
+    background-color: transparent;
+    position: relative;
+}
+
+
+.card {
+    max-width: clamp(160px, 50%, 320px);
+    background-color: transparent;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 10px;
+}
+
+
+.card__back, .card__front {
+    backface-visibility: hidden;
+    transition: transform 1s;
+    border-radius: 15px;
+}
+
+.card:hover .card__front {
+    transform: perspective(900px) rotateY(180deg);
+}
+
+.card:hover .card__back {
+    transform: perspective(900px) rotateY(360deg);
+}
+
+.card__front {
+    transform: perspective(900px) rotateY(0deg);
+}
+
+.card__back {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    height: 85%;
+    width: 50%;
+    display: grid;
+    padding: 8px 15px;
+    place-content: center;
+    transform: perspective(900px) rotateY(180deg);
+}
+
+.por-barra {
+    font-size: 20px;
+    text-shadow: 0 0 10px var(--border-skills);
+    color: #fff;
+}
+
+/*----------------------------MEDIA TECNOLOGIAS SECTION------------------------------*/
+
+@media screen and (max-width:800px) {
+    .container__skills {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 53px;
+    }
+
+    .titulos-skills {
+        display: flex;
+        justify-content: center;
+        margin-left: 30px;
+        border-radius: 0;
+    }
+}
+
+/*----------------------------END TECNOLOGIAS SECTION------------------------------*/
+
+/*-------------------------------PROYECTOS SECTION---------------------------------*/
+
+.titulo-proyectos {
+    display: flex;
+    font-family: georgia;
+    justify-content: start;
+    border-bottom: 2px solid rgba(78, 139, 183, 0.6);
+    padding: 5px;
+    border-radius: 10px 0 10px 0;
+    width: 80%;
+    margin-left: 130px;
+    margin-top: 140px;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+
+.container-proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de ancho igual */
+    grid-template-rows: repeat(2, auto); /* 2 filas de altura automática */
+    gap: 15px; /* Espacio entre las celdas */
+    margin: auto;
+    width: 80%;
+    margin-bottom: 40px;
+    container-name: proyectos;
+    container-type: inline-size;
+}
+
+.proyecto-item {
+    margin: 0;
+    padding: 8px;
+    cursor: pointer;
+    border: 2px solid #111;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.a-p {
+    text-decoration: none;
+    color: #fff;
+}
+
+.proyecto-item:hover {
+    border: 2px solid var(--border-pag);
+}
+
+img {
+    border-radius: 10px;
+}
+
+/*----------------------------MEDIA PROYECTOS SECTION------------------------------*/
+
+@container proyectos (max-width:800px) {
+    .container-proyectos {
+        grid-template-columns: repeat(auto-fill, minmax(320px,1fr));
+    }
+
+    .proyecto-item {
+        grid-column: span 3;
+        grid-row: span 2;
+        border: none;
+    }
+
+}
+
+@media screen and (max-width:800px) {
+    .titulo-proyectos {
+        display: flex;
+        justify-content: center;
+        margin-left: 30px;
+        border-radius: 0;
+    }
+
+    .container-proyectos {
+        margin-left: 20px;
+    }
+
+    .proyecto-item {
+        margin-left: 0;
+    }
+}
+
+
+/*----------------------------END PROYECTOS SECTION------------------------------*/
+
+/*--------------------------------FOOTER SECTION---------------------------------*/
+
+.footer {
+    background-color: #111;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 200;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+}
+
+.titulo-p1 {
+    color: var(--border-pag);
+    font-size: 16.5px;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+.p-1 {
+    margin: 0 5px;
+    color: #999;
+    margin-bottom: 18px;
+}
+
+.container-tecs {
+    display: flex;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    gap: 15px;
+}
+
+.html1 {
+    background-color: var(--border-pag);
+    padding: 3px 8px;
+    border-radius: 15px;
+}
+
+.css1 {
+    background-color: var(--border-pag);
+    padding: 3px 8px;
+    border-radius: 15px;
+}
+
+.tecs-name {
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.container-logos2 {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+}
+
+.logos2 {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding-right: 30px;
+}
+
+/*----------------------------MEDIA FOOTER SECTION------------------------------*/
+
+@media screen and (max-width:800px){
+    .container-logos2 {
+        margin-left: 27px;
+    }
+}
+
+/*----------------------------END FOOTER SECTION------------------------------*/
+
+
+
+
+
+
+
+
